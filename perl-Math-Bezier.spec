@@ -1,7 +1,7 @@
 %define module	Math-Bezier
 %define name	perl-%{module}
 %define version 0.01
-%define release %mkrel 12
+%define release %mkrel 13
 
 Name:		%{name}
 Version:	%{version}
