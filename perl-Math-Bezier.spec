@@ -1,21 +1,21 @@
-%define module	Math-Bezier
-%define name	perl-%{module}
-%define version 0.01
-%define release %mkrel 13
+%define upstream_name	 Math-Bezier
+%define upstream_version 0.01
 
-Name:		%{name}
-Version:	%{version}
-Release:	%{release}
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
+
 Summary:	Solution of Bezier Curves
-License:	GPL or Artistic
+License:	GPL+ or Artistic
 Group:		Development/Perl
-Source:		ftp.perl.org/pub/CPAN/modules/by-module/Math/%{module}-%{version}.tar.bz2
-Url:		http://search.cpan.org/dist/%{module}
+Url:		http://search.cpan.org/dist/%{upstream_name}
+Source0:	ftp.perl.org/pub/CPAN/modules/by-module/Math/%{upstream_name}-%{upstream_version}.tar.bz2
+
 %if %{mdkversion} < 1010
 BuildRequires:	perl-devel
 %endif
 BuildArch:	noarch
-BuildRoot:	%{_tmppath}/%{name}-%{version}
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 This module implements the algorithm for the solution of Bezier curves
@@ -23,7 +23,7 @@ as presented by Robert D. Miller in Graphics Gems V, "Quick and Simple
 Bezier Curve Drawing". 
 
 %prep
-%setup -q -n %{module}-%{version}
+%setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
@@ -44,4 +44,3 @@ rm -rf %{buildroot}
 %doc Changes README
 %{perl_vendorlib}/Math
 %{_mandir}/*/*
-
