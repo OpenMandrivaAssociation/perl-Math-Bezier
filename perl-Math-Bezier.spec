@@ -24,7 +24,7 @@ Bezier Curve Drawing".
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor
-%make_buils
+%make_build
 
 %install
 %make_install
