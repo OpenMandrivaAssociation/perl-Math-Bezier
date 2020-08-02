@@ -3,7 +3,7 @@
 
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version %{upstream_version}
-Release:	4
+Release:	5
 
 Summary:	Solution of Bezier Curves
 License:	GPL+ or Artistic
@@ -24,13 +24,10 @@ Bezier Curve Drawing".
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor
-%make
-
-%check
-make test
+%make_buils
 
 %install
-%makeinstall_std
+%make_install
 
 %files
 %doc Changes README
