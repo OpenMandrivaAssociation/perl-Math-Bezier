@@ -1,15 +1,13 @@
 %define upstream_name	 Math-Bezier
-%define upstream_version 0.01
-
 Name:		perl-%{upstream_name}
-Version:	%perl_convert_version %{upstream_version}
-Release:	5
+Version:	0.01
+Release:	6
 
 Summary:	Solution of Bezier Curves
 License:	GPL+ or Artistic
 Group:		Development/Perl
-Url:		https://search.cpan.org/dist/%{upstream_name}
-Source0:	ftp.perl.org/pub/CPAN/modules/by-module/Math/%{upstream_name}-%{upstream_version}.tar.bz2
+Url:		https://metacpan.org/dist/%{upstream_name}
+Source0:	ftp.perl.org/pub/CPAN/modules/by-module/Math/%{upstream_name}-%{version}.tar.bz2
 
 BuildRequires:	make
 BuildRequires:	perl-devel
@@ -21,7 +19,7 @@ as presented by Robert D. Miller in Graphics Gems V, "Quick and Simple
 Bezier Curve Drawing". 
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -q -n %{upstream_name}-%{version}
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor
@@ -39,9 +37,7 @@ perl Makefile.PL INSTALLDIRS=vendor
 %changelog
 * Wed Jul 29 2009 JÃ©rÃ´me Quelin <jquelin@mandriva.org> 0.10.0-1mdv2010.0
 + Revision: 403850
-- rebuild using %%perl_convert_version
-
-* Thu Jul 31 2008 Thierry Vignaud <tv@mandriva.org> 0.01-13mdv2009.0
+- rebuild using %0.01 Thu Jul 31 2008 Thierry Vignaud <tv@mandriva.org> 0.01-13mdv2009.0
 + Revision: 257775
 - rebuild
 
